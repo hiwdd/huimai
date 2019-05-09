@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 350px;
+			height: 350px;
+			border: 1px solid #000;
+			margin: 200px;
+			position: relative;
+		}
+		#big{
+			width: 400px;
+			height: 400px;
+			border: 1px solid #000;
+			overflow: hidden;
+			position: absolute;
+			top:0;
+			left : 360px;
+			display: none;
+		}
+		#mask{
+			width: 175px;
+			height: 175px;
+			background: paleturquoise;
+			position: absolute;
+			left:0;
+			top: 0;
+			opacity: 0.3;
+			display: none;
+			cursor: move;
+		}
+		#small{
+			position: relative;
+		}
+		#bigImg{
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+	<body>
+		<div id="box" >
+			<div id="small"><!--小图区-->
+				<img src="img2.jpg" alt="" width="350px" height="350px"/>
+				<div id="mask"></div><!--遮罩层-->
+			</div>
+			<div id="big"><!--大图区-->
+				<img src="img2.jpg" alt="" id="bigImg" width="400px" height="400px"/>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="../js/public.js"> </script>
+<script type="text/javascript">
+	
+	// bigImgLeft / x = (大图的宽度-大图可视区宽度)/(小图宽度-mask的宽度) = 大图宽度/小图宽度 = 大图可视区宽度 / 小图可视区（mask）宽度
+	
+	/*$id("box").onmouseenter = function(){
+		$id("mask").style.display = "block";
+		$id("big").style.display = "block";
+	}*/
+	var box = $id("box");
+	var mask = $id("mask");
+	var big = $id("big");
+	var bigImg = $id("bigImg");
+	var small = $id("small");
+	box.onmouseenter =function(){
+		mask.style.display = "block";
+		big.style.display = "block";
+	}
+	
+	/*$id("box").onmouseleave = function(){
+		$id("mask").style.display = "none";
+		$id("big").style.display = "none";
+	}*/
+	box.onmouseleave = function(){
+		mask.style.display = "none";
+		big.style.display = "none";
+	}
+	
+	
+	
+	/*$id("box").onmousemove = function(e){
+		var e = e || event;
+		var l = e.clientX - $id("box").offsetLeft - $id("mask").offsetWidth/2;
+		var t = e.clientY - $id("box").offsetTop - $id("mask").offsetHeight/2;
+		//console.log(l,t)
+		var maxL = $id("box").clientWidth - $id("mask").offsetWidth;
+		var maxT = $id("box").clientHeight - $id("mask").offsetHeight;
+		l = l < 0 ? 0 : ( l > maxL ? maxL : l);
+		t = t < 0 ? 0 : ( t > maxT ? maxT : t);
+		
+		console.log(t)
+		
+		$id("mask").style.left = l + "px";
+		$id("mask").style.top = t + "px";
+		
+		//大图显示：
+		// bigImgLeft / l = (大图的宽度-大图可视区宽度)/(小图宽度-mask的宽度) = 大图宽度/小图宽度 = 大图可视区宽度 / 小图可视区（mask）宽度
+		
+		$id("bigImg").style.left = - l * ($id("bigImg").offsetWidth/$id("small").offsetWidth) + "px";
+		$id("bigImg").style.top = - t * ($id("bigImg").offsetHeight/$id("small").offsetHeight) + "px";
+	}*/
+	box.onmousemove=function(e){
+		var eve = e || event;
+		var l = e.clientX - box.offsetLeft - mask.offsetWidth/2;
+		var t = e.clientY - box.offsetTop - mask.offsetHeight/2;
+		var maxL=box.clientWidth - mask.offsetWidth;
+		var maxT=box.clientHeight - mask.offsetHeight;
+		l = l < 0 ? 0 : (l > maxL ? maxL : l);
+		t = t < 0 ? 0 : (t > maxT  ? maxT : t);
+		mask.style.left = l + "px";
+		mask.style.top = t + "px";
+		
+		bigImg.style.left = -l * (bigImg.offsetWidth/small.offsetWidth) + "px";
+		bigImg.style.top = -t * (bigImg.offsetHeight/small.offsetHeight) + "px";
+	}
+	
+	
+	
+</script>

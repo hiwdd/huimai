@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+</head>
+<body class="container">
+  <h2>商品列表</h2>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>序号</th>
+        <th>商品名称</th>
+        <th>商品价格</th>
+        <th>商品数量</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+    </tbody>
+  </table>
+  总价：&yen <span id="totalPrice"></span> 
+</body>
+<script src="./car.js"></script>
+<script>
+  //页面加载，获取所有的购物车数据
+  var car = new Cart();
+  var cartlist = car.getCar();
+  var str = ``; //用于后续的tr拼接
+  for(var i=0; i<cartlist.length; i++){
+    str += `<tr>
+        <td>${cartlist[i].id}</td>
+        <td>${cartlist[i].title}</td>
+        <td>${cartlist[i].price}</td>
+        <td>${cartlist[i].number}</td>
+        <td><button class="btn btn-danger" onclick="removeGoods(${cartlist[i].id})">删除</button></td>
+      </tr>`;
+  }
+  //把str作为tbody中的内容
+  document.getElementsByTagName('tbody')[0].innerHTML = str;
+
+  //删除购物车商品
+  function removeGoods(id){
+    if(confirm('确认删除?')){
+      car.delCarGoods(id);
+      location.reload();
+    }
+  }
+  //设置总价格
+  document.getElementById('totalPrice').innerText = car.getTotalPrice();
+
+</script>
+</html>
