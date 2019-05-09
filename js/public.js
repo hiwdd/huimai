@@ -11,6 +11,24 @@ function isPrime(num){
 function $id(id){
 	return document.getElementById(id);
 }
+//先判断一个数，在数组中是否存在 
+function hasNumInArr(arr,num){
+	for (var i = 0; i < arr.length; i++) {
+		if(arr[i] === num){
+			return true;
+		}
+	}
+	return false;
+}
+function noRepeat(arr){
+	var brr = [];
+	for (var i = 0; i < arr.length; i++) {
+		if(!hasNumInArr(brr,arr[i])){//表示 不存在 
+			brr.push(arr[i]);
+		}
+	}
+	return brr;
+}
 //获取min到max之间的随机数
 function getRand(min,max){
 	return parseInt(Math.random()*(max-min+1) + min);
@@ -34,8 +52,18 @@ function getYZM(num){
 	return yzm;
 }
 //随机获取十六进制颜色值
-// #43ab65
-
+function getColNum(){
+	//0123456789abcdef:在这些字符里随机取一个,取六次,拼接成一个字符串;
+	var str = "0123456789abcdef";
+	var color = "#";
+	for (var i = 0; i < 6; i++) {
+		var rand = getRand(0,15);
+		var ch = str.charAt(rand);
+		//console.log(ch);
+		color += ch;
+	}
+	return color;
+}
 
 //时间本地化
 function dateToString(date){
@@ -64,21 +92,7 @@ function getDb(num){
 function diff(startTime,endTime){
 	return (endTime.getTime() - startTime.getTime())/1000;
 }
-//获取随机十六进制颜色。
-function getColor(){
-	//0123456789abcdef:在这些字符里随机取一个,取六次,拼接成一个字符串;
-	var str = "0123456789abcdef";
-	var color = "#";
-	for (var i = 0; i < 6; i++) {
-		var rand = getRand(0,15);
-		var ch = str.charAt(rand);
-		//console.log(ch);
-		color += ch;
-	}
-	return color;
-}
-
-//跨浏览器兼容ie8及以下浏览器通过className获取元素集合。
+//兼容ie8通过className获取元素集合
 function getByClassName(className){
 	//获取所有元素
 	//找到这些包含class为className的这些元素
@@ -92,7 +106,8 @@ function getByClassName(className){
 	}
 	return eleArr;
 }
-
+//插入到后面
+//insertAfter(p,firstP);
 function insertAfter(newEle,target){
 	//先找到target的父节点
 	var parentEle = target.parentNode;
@@ -106,7 +121,7 @@ function insertAfter(newEle,target){
 	}
 }
 //兼容ie8获取所有子元素的元素节点集合
-function getChildren(sup){
+function getChildren(sup){//兼容ie8获取所有子元素的元素节点集合
 	var elements = [];
 	var nodes = sup.childNodes;
 	for (var i = 0; i < nodes.length; i++) {
@@ -127,10 +142,51 @@ function getLastChild(sup){
 	}
 	return null;
 };
-
-/*function getLastChild(sup){//有bug
+function getFirstChild(sup){
+	//console.log(getChildren(sup));
+	var children = getChildren(sup);
+	//如果子元素的元素节点为0;return null
+	//只要有一个，获取数组的最后一个，children[children.length-1];
+	if(children.length > 0){
+		return children[0];
+	}
+	return null;
+};
+function getPrevSilbingEle(ele){
+	if(ele.previousElementSibling){
+		return ele.previousElementSibling;
+	}else{
+		var el = ele.previousSibling;
+		while(el && el.nodeType != 1){
+			el = el.previousSibling;
+		}
+		return el;
+	}
+};
+function getNextSibingEle(ele){
+     if(ele.nextElementSibling){
+         return ele.nextElementSibling;
+     }else{
+         var el = ele.nextSibling;
+         while(el && el.nodeType != 1){
+             el = el.nextSibling;
+         }
+         return el;
+     }
+};
+function removeEle(ele){
+	if(ele.remove){
+		ele.remove();
+	}else{
+		var par = ele.parentNode;
+		par.removeChild(ele);
+	}
+	return;
+};
+/*function getLastChild(sup){
 	//查找到最后一个子节点
 	var sub = sup.lastChild;
+	
 	//如果没有任何一个子节点，应该返回null
 	if(sub){
 		//判断sub的nodeType == 3
@@ -162,6 +218,7 @@ function getLastChild(sup){
 	}
 	return null;
 }*/
+
 //跨浏览器兼容ie8获取事件对象的button属性
 function getButton(e){
 	if(e){//高版本浏览器
