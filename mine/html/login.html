@@ -31,7 +31,7 @@
 			<div class="login">            
 				<button>登录</button>
 			</div>        
-			<div class="reg">还没账号?<a href="#">马上注册</a></div>        
+			<div class="reg">还没账号?<a href="./register.html">马上注册</a></div>        
 		</div>   
 	</div>
 </body>
@@ -51,13 +51,12 @@
 			for(var i = 0; i < len; i++){
 				//用户名存在且对应密码相等则返回首页
 				if(data[i].username == username && data[i].pwd == pwd){
-					location.href = "./index.html";
+					location.href = "./index.html?username="+data[i].username;
 					return;
 				}
 			}
 			//否则提示信息错误
 			alert("用户名或密码错误");
 		});
-			
 	}
 </script>

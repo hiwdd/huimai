@@ -20,8 +20,8 @@
                 <p>紧急通知紧急通知</p>
             </div>
             <ul id="menu_list" class="fr">
-                <li><a href="./register.html">注册</a></li>
-                <li><a href="./login.html">登录</a></li>
+                <li id="reg_tag"><a href="./register.html">注册</a></li>
+                <li id="login_tag"><a href="./login.html">登录</a></li>
                 <li><a href="#">我的订单</a></li>
                 <li><a href="#">我的关注</a></li>
                 <li><a href="#">资讯</a></li>
@@ -147,13 +147,10 @@
 </html>
 
 <script>
-//banner轮播
-var banUl = document.getElementsByClassName("bannerUl")[0];
-
 
 //瀑布流
 var ul = document.getElementById("publiu").firstElementChild;
-var list = ul.getElementsByTagName("li");
+var list = ul.getElementsByTagName("li"); 
 
 //默认加载
 loadImg();
@@ -243,4 +240,27 @@ function add_info(arr){
 
     return div;
 }
+
+
+//商品点击跳转详情页面---委托
+$(".zhibo a").on("click",function(){
+    // console.log(this);
+    var param = $(this).children("img")[0].src;
+    // console.log(param);
+    location.href = "./xq.php?imgsrc="+param;
+});
+
+$(".biqiang a").on("click",function(){
+    // console.log(this);
+    var param = $(this).children("img")[0].src;
+    // console.log(param);
+    location.href = "./xq.php?imgsrc="+param;
+});
+
+$("#publiu ul").on("click","li",function(){
+    // console.log(this);
+    var param = $(this).children("img")[0].src;
+    // console.log(param);
+    location.href = "./xq.php?imgsrc="+param;
+});
 </script>

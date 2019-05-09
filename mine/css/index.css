@@ -250,6 +250,8 @@
     border: 1px solid #666666;
 }
 #publiu ul li:hover{
+    /* cursor:  */
+    cursor: pointer;
     border:1px solid #f70800;
 }
 #publiu ul img{
