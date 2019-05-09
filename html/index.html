@@ -246,7 +246,7 @@ document.onscroll = function (){
         $.getJSON("./hmyx.json",function(data){
             // console.log(list.length);
             if(data.length <= list.length){
-                alert("no more goods");
+                //alert("no more goods");
                 return;
             }else{
                 for(var i=list.length; i < data.length; i++){
