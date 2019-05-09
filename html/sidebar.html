@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>侧边导航栏</title>
+    <link rel="stylesheet" href="../css/public.css">
+    <style>
+        body img {
+            display: block;
+        }
+
+        #sidebar {
+            z-index: 999;
+            width: 36px;
+            position: fixed;
+            height: 100%;
+            right: 0;
+            top: 0;
+        }
+
+        #side-m {
+            position: fixed;
+            right: 0;
+            top: 40%;
+        }
+
+        #side-b {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+
+        #pop-up {
+            width: 258px;
+            height: 228px;
+            background: #fff;
+            border: 1px solid #ddd;
+            text-align: center;
+            position: fixed;
+            right: 36px;
+            top: 40%;
+            display: none;
+            z-index: 999;
+        }
+
+        #pop-up .tu {
+            display: block;
+            margin: 30px 82px 14px;
+        }
+
+        #pop-up p a {
+            padding: 0 7px;
+            color: red;
+        }
+
+        #pop-up .btn {
+            display: block;
+            width: 88px;
+            height: 28px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-top: 52px;
+            line-height: 28px;
+            text-align: center;
+        }
+
+        #pop-up .fl {
+            margin-left: 25px;
+        }
+
+        #pop-up .fr {
+            margin-right: 25px;
+        }
+
+        #pop-up .btn:hover {
+            color: red;
+            border: 1px solid red;
+        }
+
+        .pub {
+            width: 90px;
+            height: 36px;
+            text-align: center;
+            line-height: 36px;
+            background: #666;
+            border-radius: 6px;
+            position: fixed;
+            right: 36px;
+        }
+
+        .pub a {
+            color: #fff;
+        }
+
+        .wdgz {
+            top: 45%;
+            display: none;
+        }
+
+        .dcwj {
+            bottom: 5%;
+            display: none;
+        }
+
+        .fhdb {
+            bottom: 0;
+            display: none;
+        }
+
+        #code {
+            position: fixed;
+            right: 33px;
+            bottom: 0;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+ 
+    <div id="sidebar">
+        <div id="side-m">
+            <a href="#" class="one"><img src="../images/side1.jpg" alt="惠买"></a>
+            <div id="pop-up">
+                <a href="#" class="tu"><img src="../images/toux.jpg" alt="惠买"></a>
+                <p>你好！请<a href="#">登录</a>|<a href="#">注册</a></p>
+                <a href="#" class="btn fl">我的订单</a>
+                <a href="#" class="btn fr">优惠券</a>
+            </div>
+            <a href="#" class="two"><img src="../images/side2.jpg" alt="惠买"></a>
+            <div class="pub wdgz"><a href="#">我的关注</a></div>
+        </div>
+        <div id="side-b">
+            <a href="#" class="three"><img src="../images/side3.jpg" alt="惠买"></a>
+            <div id="code">
+                <a href="#"><img src="../images/code.jpg" alt="惠买"></a>
+            </div>
+            <a href="#" class="four"><img src="../images/side4.jpg" alt="惠买"></a>
+            <div class="pub dcwj"><a href="#">调查问卷</a></div>
+            <a href="#" class="five"><img src="../images/side5.jpg" alt="惠买"></a>
+            <div class="pub fhdb"><a href="#">返回顶部</a></div>
+        </div>
+    </div>
+
+</body>
+<script src="../js/jquery.js"></script>
+<script>
+    $(function () {
+        $(".one,#pop-up").on("mouseover", function () {
+            $("#pop-up").css("display", "block");
+        })
+        $(".two,.wdgz").on("mouseover", function () {
+            $(".wdgz").css("display", "block");
+        })
+        $(".three,#code").on("mouseover", function () {
+            $("#code").css("display", "block");
+        })
+        $(".four,.dcwj").on("mouseover", function () {
+            $(".dcwj").css("display", "block");
+        })
+        $(".five,.fhdb").on("mouseover", function () {
+            $(".fhdb").css("display", "block");
+        })
+
+        $(".one,#pop-up").on("mouseout", function () {
+            $("#pop-up").css("display", "none");
+        })
+        $(".two,.wdgz").on("mouseout", function () {
+            $(".wdgz").css("display", "none");
+        })
+        $(".three,#code").on("mouseout", function () {
+            $("#code").css("display", "none");
+        })
+        $(".four,.dcwj").on("mouseout", function () {
+            $(".dcwj").css("display", "none");
+        })
+        $(".five,.fhdb").on("mouseout", function () {
+            $(".fhdb").css("display", "none");
+        })
+
+        $(".five,.fhdb").on("click", function () {
+            $(window).scroll(function () {
+                $(function () {
+                    $("document").toTop();
+                });
+            })
+        })
+    })
+</script>
+
+</html>
