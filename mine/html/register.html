@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <script src="../js/register.js"></script>
+    <script src="../js/jquery.js"></script>
+</head>
+<body>
+    <!-- 菜单 -->
+    <div id="menu">
+        <div class="core clearfix">
+            <ul id="menu_list" class="fr">
+                <li><a href="./register.html">注册</a></li>
+                <li><a href="./login.html">登录</a></li>
+                <li><a href="#">我的订单</a></li>
+                <li><a href="#">我的关注</a></li>
+                <li><a href="#">资讯</a></li>
+                <li><a href="#">品牌库</a></li>
+                <li><a href="#"><img src="../img/phone.jpg" /><span>手机惠买</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="register">
+        <img src="../img/phoneApp.gif" class="App">
+        <div class="wel-register">
+            <div class="logo-register">
+                <a href="https://www.ugoshop.com/" class="logo1"><img src="../img/logo1.jpg" target="_blank"></a>
+                <img src="../img/welcome.jpg" class="welcome">
+            </div>
+            <p class="already">
+                已经注册，<a href="https://www.ugoshop.com/user.php" target="_blank">现在登录》</a>
+            </p>
+        </div>
+        <div class="register-active">
+            <ul>
+                <li class="active">注册/TV激活</li>
+                <li class="help">如有疑问请点击<a href="https://www.ugoshop.com/help.html" target="blank">帮助中心</a>，或拨打客服热线：<i>400-707-0707</i></li>
+            </ul>
+        </div>
+        <div class="register-main">
+            <form>
+                <div class="account-num">
+                    <span>账号：</span>
+                    <input type="text" id="zh" name="username"/>
+                    <input type="text" id="zh_valid" disabled="disabled"/>
+                </div>
+                <div class="phone-num">
+                    <span>手机号：</span>
+                    <input type="text" id="sjh" name="phone" />
+                    <input type="text" id="phnum_valid" disabled="disabled"/>
+                </div>
+                <div class="password">
+                    <span>设置密码：</span>
+                    <input type="password" id="mm" name="pwd" /> 
+                    <input type="text" id="mm_valid" disabled="disabled"/>
+                </div>
+                <div class="password">
+                    <span>确认密码：</span>
+                    <input type="password" id="confirm">
+                    <input type="text" id="mmagain_valid" disabled="disabled"/>
+                </div>
+                <!-- <div class="yzm">
+                    <span>验证码：</span>
+                    <input type="text" id="yzm">
+                    <span id="mmagain_valid"></span>
+                </div> -->
+
+                <div class="agreement">
+                    <span></span>
+                    <input type="checkbox" checked="checked">我已阅读并同意<a href="https://www.ugoshop.com/article-48.html">《惠买用户服务承诺》</a>
+                </div>
+                <div class="submit">
+                    <input type="button" id="btn" value="提交"> 
+                </div>
+                <div class="reminder">
+                    <p>温馨提示：</p>
+                    惠买升级为电视购物大全，其中收录了优购物、时尚购物等多家优质购物频道，您可以选购更多优质商品，欢迎您的光临！
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script>
+    //验证处理
+    var zh = document.getElementById("zh");
+    var sjh = document.getElementById("sjh");
+    var mm = document.getElementById("mm");
+    var confirm = document.getElementById("confirm");
+    // console.log(zh);
+
+    var zh_valid = document.getElementById("zh_valid");
+    var phnum_valid = document.getElementById("phnum_valid");
+    var mm_valid = document.getElementById("mm_valid");
+    var mmagain_valid = document.getElementById("mmagain_valid");
+
+    //正则
+    var zhReg = /^\w{3,8}$/;
+    var sjhReg = /^1[3||5||7]{1}\d{9}$/;
+    var mmReg = /^\w{6,20}$/;
+    
+    //注册成功flag
+    var zhflag,sjhflag,mmflag,confirmflag = false;
+
+    //账号
+    zh.onclick = function(){
+        zh_valid.style.display = "block";
+        $(zh).removeClass("valid_truepic");
+        $(zh_valid).removeClass("valid_falsebox").addClass("valid_truebox");
+        
+        zh_valid.value = "请输入账号";
+    }
+    //zh失去焦点时
+    zh.onblur = function(){
+        //zh中没有内容ui
+        if(!zh.value){
+            zh_valid.value = "账号不能为空";
+            $(zh_valid).removeClass("valid_truebox").addClass("valid_falsebox");
+
+            zhflag = false;
+        }else{
+            //zh中有内容
+            if(zhReg.test(zh.value)){
+                //验证成功
+                $(zh).addClass("valid_truepic");
+                zh_valid.style.display = "none";
+
+                zhflag = true;
+            }else{
+                zh_valid.value = "账号格式不正确，请再次输入";
+                $(zh_valid).removeClass("valid_truebox").addClass("valid_falsebox");
+
+                zhflag = false;
+            }
+        }
+    }
+
+
+    //手机号
+    sjh.onclick = function(){
+        phnum_valid.style.display = "block";
+        $(sjh).removeClass("valid_truepic");
+        $(phnum_valid).removeClass("valid_falsebox").addClass("valid_truebox");
+        
+        phnum_valid.value = "请输入手机号";
+    }
+    //sjh失去焦点时
+    sjh.onblur = function(){
+        //zh中没有内容ui
+        if(!sjh.value){
+            phnum_valid.value = "手机号不能为空";
+            $(phnum_valid).removeClass("valid_truebox").addClass("valid_falsebox");
+
+            sjhflag = false;
+        }else{
+            //zh中有内容
+            if(sjhReg.test(sjh.value)){
+                //验证成功
+                $(sjh).addClass("valid_truepic");
+                phnum_valid.style.display = "none";
+
+                sjhflag = true;
+            }else{
+                phnum_valid.value = "手机号格式不正确，请再次输入";
+                $(phnum_valid).removeClass("valid_truebox").addClass("valid_falsebox");
+
+                sjhflag = false;
+            }
+        }
+    }
+
+
+    //密码
+    mm.onclick = function(){
+        mm_valid.style.display = "block";
+        $(mm).removeClass("valid_truepic");
+        $(mm_valid).removeClass("valid_falsebox").addClass("valid_truebox");
+        
+        mm_valid.value = "请输入密码";
+    }
+    //mm失去焦点时
+    mm.onblur = function(){
+        //没有内容ui
+        if(!mm.value){
+            mm_valid.value = "密码不能为空";
+            $(mm_valid).removeClass("valid_truebox").addClass("valid_falsebox");
+
+            mmflag = false;
+        }else{
+            //有内容
+            if(mmReg.test(mm.value)){
+                //验证成功
+                $(mm).addClass("valid_truepic");
+                mm_valid.style.display = "none";
+
+                mmflag = true;
+            }else{
+                mm_valid.value = "密码格式不正确，请再次输入";
+                $(mm_valid).removeClass("valid_truebox").addClass("valid_falsebox");
+
+                mmflag = false;
+            }
+        }
+    }
+
+
+    //确认密码
+    confirm.onclick = function(){
+        mmagain_valid.style.display = "block";
+        $(confirm).removeClass("valid_truepic");
+        $(mmagain_valid).removeClass("valid_falsebox").addClass("valid_truebox");
+        
+        mmagain_valid.value = "请确认密码";
+    }
+    //mm失去焦点时
+    confirm.onblur = function(){
+        //没有内容ui
+        if(!confirm.value){
+            mmagain_valid.value = "不能为空";
+            $(mmagain_valid).removeClass("valid_truebox").addClass("valid_falsebox");
+
+            confirmflag = false;
+        }else{
+            //有内容
+            if(confirm.value == mm.value){
+                //验证成功
+                $(confirm).addClass("valid_truepic");
+                mmagain_valid.style.display = "none";
+
+                confirmflag = true;
+            }else{
+                mmagain_valid.value = "两次输入密码不同，请重新输入";
+                $(mmagain_valid).removeClass("valid_truebox").addClass("valid_falsebox");
+
+                confirmflag = false;
+            }
+        }
+    }
+
+
+    //注册成功并写入用户信息
+    $(".submit #btn").click(function(){
+        if(zhflag && sjhflag && mmflag && confirmflag){
+            
+            //获取表单元素
+            var data = $("form").serialize();
+            // console.log(data);
+
+            //发送post请求
+            $.post('./adduser.php',data,function(res){
+                if(res == 200){
+                    alert("注册成功");
+                    location.href = "./login.html";
+                }else{
+                    alert("出现不明错误，请重新注册");
+                }
+            },'json');
+        }else{
+            alert("注册信息有误，未能成功注册");
+            return;
+        }
+    });
+</script>
