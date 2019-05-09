@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>惠买项目</title>
+	<link rel="stylesheet" type="text/css" href="../css/login.css">
+	<script src="../js/jquery.js"></script>
+</head>
+<body>
+	<!--面板-->
+	<div id="panel">   
+	 <!--面板的头部-->   
+		<div class="panel-top">       
+			<h2>欢迎登入惠买</h2>    
+		</div>    
+		<!--面板的主要内容-->   
+		<div class="panel-content">
+			<div class="int">
+				<input type="text" placeholder="你的手机号/用户名" required="required" id="username">       
+			</div>        
+			<div class="int">                      
+				<input type="password" placeholder="输入密码" required="required" id="pwd">        
+			</div>       
+			<!--配置信息-->        
+			<div class="setting">            
+			<a href="#" class="auto-login">
+				<input type="checkbox">下次自动登录
+			</a>           
+			<a href="#" class="forget-pwd">忘记密码</a>        
+			</div>        
+			<div class="login">            
+				<button>登录</button>
+			</div>        
+			<div class="reg">还没账号?<a href="#">马上注册</a></div>        
+		</div>   
+	</div>
+</body>
+</html>
+
+<script>
+	//点击登陆
+	var btn = document.getElementsByTagName("button")[0];
+	btn.onclick = function(){
+		//获取用户名和密码
+		var username = document.getElementById("username").value;
+		var pwd = document.getElementById("pwd").value;
+
+		//遍历json数据
+		$.getJSON("./login.json",function(data){
+			var len = data.length;
+			for(var i = 0; i < len; i++){
+				//用户名存在且对应密码相等则返回首页
+				if(data[i].username == username && data[i].pwd == pwd){
+					location.href = "./index.html";
+					return;
+				}
+			}
+			//否则提示信息错误
+			alert("用户名或密码错误");
+		});
+			
+	}
+</script>

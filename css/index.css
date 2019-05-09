@@ -84,6 +84,7 @@
     padding:0 3px;
 }
 
+<<<<<<< HEAD
 #banner{
     position: relative;
 }
@@ -92,6 +93,10 @@
     overflow: hidden;
 }
 #banner,#banner ul,#banner ul li {
+=======
+
+ #banner,#banner ul,#banner ul li {
+>>>>>>> 3309dc2b253558e3c6e616425c1c2e751a31c846
     width: 100%;
 }
 #banner ul li {
@@ -99,6 +104,7 @@
 }
 #banner ul li a img {
     width: 100%;
+<<<<<<< HEAD
     height: 340px;
 }
 #banner .pnn{
@@ -144,6 +150,9 @@ margin: 5px;
 #banner .yuandian .yuan{
     background: orange;
 }
+=======
+} 
+>>>>>>> 3309dc2b253558e3c6e616425c1c2e751a31c846
 #content {
     background: #f2f2f2;
 }
