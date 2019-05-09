@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>倒计时</title>
+	<style type="text/css">
+		.time {
+			width:300px;
+			height:80px;
+			margin:0 auto;
+		}
+		#t_d,#t_h,#t_m,#t_s {
+			background:black;
+			border-radius:5px;
+			color:#FFFFFF;
+			font-weight:bold;
+		}
+	</style>
+</head>
+<body>
+	<div class="time">
+	    <span id="t_d">00天</span>:
+	    <span id="t_h">00时</span>:
+	    <span id="t_m">00分</span>:
+	    <span id="t_s">00秒</span>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	 function GetRTime() {
+     var EndTime = new Date('2019/11/11 00:00:00');
+     var NowTime = new Date();
+     var t = EndTime.getTime() - NowTime.getTime();
+     var d = 0;
+     var h = 0;
+     var m = 0;
+     var s = 0;
+     if (t >= 0) {
+         d = Math.floor(t / 1000 / 60 / 60 / 24);
+         h = Math.floor(t / 1000 / 60 / 60 % 24);
+         m = Math.floor(t / 1000 / 60 % 60);
+         s = Math.floor(t / 1000 % 60);
+     }
+     function toDouble(n) {
+         return n < 10 ? '0' + n : n;
+     }
+     document.getElementById('t_d').innerHTML = d + '天';
+     document.getElementById('t_h').innerHTML = toDouble(h) + '时';
+     document.getElementById('t_m').innerHTML = toDouble(m) + '分';
+     document.getElementById('t_s').innerHTML = toDouble(s) + '秒';
+ }
+ setInterval(GetRTime, 0)
+</script>

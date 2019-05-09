@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+.App{
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    margin: 0 0 0 -630px;
+}
+.wel-register{
+    height: 112px;
+    width: 968px;
+    margin: 0 auto;
+}
+.log-register{
+    float: left;
+}
+.logo1{
+    float: left;
+    display: block;
+    padding-top: 40px;
+    padding-left: 20px
+}
+.welcome{
+    float: left;
+    display: block;
+    padding-top: 40px;
+    padding-left: 40px
+}
+.already{
+    float: right;
+    padding-top: 68px;
+    font-size: 12px;
+}
+.already a{
+    color: #0089cf;
+}
+.register-active{
+    width: 968px;
+    height: 42px;
+    margin: 0 auto;
+}
+
+.active{
+    float: left;
+    height: 42px;
+    width: 225px;
+    background: orangered;
+    text-align: center;
+    line-height: 42px;
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+}
+.help{
+    float: right;
+    font-size: 12px;
+    margin-top: 15px;
+}
+.help a{
+    color: #0089CF;
+    cursor: pointer;
+}
+.help i{
+    color: #eb0007;
+}
+.register-main{
+    width: 964px;
+    height: 485px;
+    border: 2px solid #ff8400;
+    margin: 0 auto;
+    padding-top: 45px;
+}
+form{
+    display: block;
+}
+.register-main form div{
+    height: 52px;
+}
+.register-main span{
+    display: block;
+    float: left;
+    text-align: right;
+    width: 185px;
+    padding-right: 15px;
+    line-height: 37px;
+    color: #666666;
+}
+.register-main input{
+    width: 314px;
+    line-height: 25px;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #a2a2a2;
+    display: block;
+    float: left;
+}
+.agreement{
+    font-size: 12px;
+}
+.agreement input{
+    width:20px;
+    margin-left: 198px;
+    padding: 0;    
+}
+.agreement a{
+    cursor: pointer;
+    color: #0089CF;
+}
+.submit{
+    width: 964px;
+    overflow: hidden;
+}
+#btn{
+    margin-left: 198px;
+    width: 126px;
+    height: 33px;
+    background: red;
+    color: white;
+}
+.reminder{
+    margin-left: 198px;
+    font-size: 12px;
+    width: 350px;
+    color: #666;
+}
+.reminder p{
+    line-height: 30px;
+    font-weight: 600;
+}
