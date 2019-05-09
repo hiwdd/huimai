@@ -8,13 +8,62 @@
     <title>Document</title>
     <link rel="stylesheet" href="./bootstrap.css">
     <link rel="stylesheet" href="./bootstrap.js">
-    <link rel="stylesheet" href="./glass/glass.html">
+
     <style>
         * {
             margin: 0;
             padding: 0;
         }
-        .content,.main,.price,.other-goods{
+
+        #box {
+            width: 350px;
+            height: 350px;
+            border: 1px solid #000;
+            margin: 0 auto;
+            position: relative;
+            
+        }
+
+        #big {
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 360px;
+            display: none;
+        }
+
+        #mask {
+            width: 175px;
+            height: 175px;
+            background: paleturquoise;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.3;
+            display: none;
+            cursor: move;
+        }
+
+        #small {
+            position: relative;
+            
+        }
+
+        #bigImg {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+
+
+        .content,
+        .main,
+        .price,
+        .other-goods {
             width: 1000px;
             margin: 0 auto;
         }
@@ -29,9 +78,9 @@
             list-style: none;
         }
 
-      .content  img {
+        .content img {
             float: left;
-            width:280px;
+            width: 280px;
             height: 430px;
         }
 
@@ -44,47 +93,57 @@
         h6 {
             text-align: center;
         }
-        .cl{
+
+        .cl {
             text-align: center;
             margin-top: 20px;
         }
-        .main img{
+
+        .main img {
             margin: 0 auto;
             width: 1000px;
         }
-        .price h2{
+
+        .price h2 {
             font-size: 30px;
             font-weight: bold;
         }
-        .price p{
-            font-size:25px; 
+
+        .price p {
+            font-size: 25px;
         }
-        .price p:nth-child(2){
-            margin-top:20px; 
+
+        .price p:nth-child(2) {
+            margin-top: 20px;
         }
-        .other-goods img{
+
+        .other-goods img {
             width: 245px;
         }
-        .other-goods h4{
+
+        .other-goods h4 {
             font-weight: bold;
             height: 40px;
             background: #cccccc;
             line-height: 40px;
             border: 1px solid #cccccc;
         }
-        .other-goods a{
+
+        .other-goods a {
             width: 245px;
             display: inline-block;
             text-align: center;
             color: black;
         }
-        .other-goods span{
+
+        .other-goods span {
             display: inline-block;
             width: 245px;
             text-align: left;
             color: red;
         }
-        .other-goods{
+
+        .other-goods {
             border: 1px solid #cccccc;
         }
     </style>
@@ -92,30 +151,50 @@
 
 <body>
 
+    <div id="box">
+        <div id="small">
+            <!--小图区-->
+            <img src="./glass/img2.jpg" alt="" width="350px" height="350px" />
+            <div id="mask"></div>
+            <!--遮罩层-->
+        </div>
+        <div id="big">
+            <!--大图区-->
+            <img src="./glass/img2.jpg" alt="" id="bigImg" width="800px" height="800px" />
+        </div>
+    </div>
+
+
+
+
+
+
+
+
     <div class="content">
-            <h2>DETALLs商品详情</h2>
-            <table class="table  table-bordered">
-                <thead>
-                    <td>品牌</td>
-                    <td>商品名称</td>
-                    <td>商品清单</td>
-                    <td>规格参数</td>
-                    <td>材质</td>
-                </thead>
-        
-                <tbody>
-                    <tr>
-                        <td>丁摩</td>
-                        <td>丁摩 重工钉珠重磅真丝衬衫V领宽松真丝上衣·黑色</td>
-                        <td>上衣 1 件</td>
-                        <td>尺码：S,M.L,XL,XXL</td>
-                        <td>100%桑蚕丝</td>
-                    </tr>
-                </tbody>
-            </table>
+        <h2>DETALLs商品详情</h2>
+        <table class="table  table-bordered">
+            <thead>
+                <td>品牌</td>
+                <td>商品名称</td>
+                <td>商品清单</td>
+                <td>规格参数</td>
+                <td>材质</td>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>丁摩</td>
+                    <td>丁摩 重工钉珠重磅真丝衬衫V领宽松真丝上衣·黑色</td>
+                    <td>上衣 1 件</td>
+                    <td>尺码：S,M.L,XL,XXL</td>
+                    <td>100%桑蚕丝</td>
+                </tr>
+            </tbody>
+        </table>
         <h2>商品信息INFORMATION</h2>
-       <a href="./glass/glass.html"><img src="./images/img.jpg" class="con-left" ></a>
-        
+       <img src="./images/img.jpg" class="con-left">
+
         <div class="con-right">
             <span>商品信息/INEM INFO</span>
             <ul>
@@ -256,17 +335,17 @@
         <h2>价格说明</h2>
         <p>划线价格：指商品的专柜价，吊牌价，正品零售价，厂商指导价，
             或该产品曾经展示过的销售价等。并非原价，仅供参考</p>
-            <p>未划线价格：指商品的专柜价，吊牌价，正品零售价，厂商指导价，
-                    或该产品曾经展示过的销售价等。并非原价，仅供参考</p>
+        <p>未划线价格：指商品的专柜价，吊牌价，正品零售价，厂商指导价，
+            或该产品曾经展示过的销售价等。并非原价，仅供参考</p>
     </div>
     <div class="other-goods">
         <h4>看看其他同类商品</h4>
         <img src="./images/img2.jpg" alt="">
-       
+
         <img src="./images/img3.jpg" alt="">
-      
+
         <img src="./images/img4.jpg" alt="">
-       
+
         <img src="./images/img1.jpg" alt="">
         <a href="#">丁摩 简约休闲百搭纯色衬衣</a>
         <a href="#">丁摩 简约休闲百搭纯色衬衣</a>
@@ -280,3 +359,42 @@
 </body>
 
 </html>
+<script src="./js/public.js"> </script>
+<script>
+    var box = $id("box");
+    var mask = $id("mask");
+    var big = $id("big");
+    var bigImg = $id("bigImg");
+    var small = $id("small");
+    $id("box").onmouseenter = function () {
+        $id("mask").style.display = "block";
+        $id("big").style.display = "block";
+    }
+
+    $id("box").onmouseleave = function () {
+        $id("mask").style.display = "none";
+        $id("big").style.display = "none";
+
+    }
+    $id("box").onmousemove = function (e) {
+        var e = e || event;
+        var l = e.clientX - $id("box").offsetLeft - $id("mask").offsetWidth / 2;
+        var t = e.clientY - $id("box").offsetTop - $id("mask").offsetHeight / 2;
+        //console.log(l,t)
+        var maxL = $id("box").clientWidth - $id("mask").offsetWidth;
+        var maxT = $id("box").clientHeight - $id("mask").offsetHeight;
+        l = l < 0 ? 0 : (l > maxL ? maxL : l);
+        t = t < 0 ? 0 : (t > maxT ? maxT : t);
+
+        console.log(t)
+
+        $id("mask").style.left = l + "px";
+        $id("mask").style.top = t + "px";
+
+        //大图显示：
+        // bigImgLeft / l = (大图的宽度-大图可视区宽度)/(小图宽度-mask的宽度) = 大图宽度/小图宽度 = 大图可视区宽度 / 小图可视区（mask）宽度
+
+        $id("bigImg").style.left = -l * ($id("bigImg").offsetWidth / $id("small").offsetWidth) + "px";
+        $id("bigImg").style.top = -t * ($id("bigImg").offsetHeight / $id("small").offsetHeight) + "px";
+    }
+</script>
