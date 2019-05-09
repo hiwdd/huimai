@@ -134,3 +134,24 @@ form{
     line-height: 30px;
     font-weight: 600;
 }
+
+#zh_valid,#phnum_valid,#mm_valid,#mmagain_valid{
+    width: 254px !important;
+    margin-left: 8px;
+    display: none;
+}
+
+.valid_truepic{
+    background : url(../img/regtrue.png) no-repeat 97% center;
+    background-size : 15px 15px;
+}
+.valid_falsebox{
+    background-color: #FFF3F3;
+    color: #EB0007;
+    border-color: #EB0007;
+}
+.valid_truebox{
+    background-color: #EBEBE4;
+    color: #545454;
+    border-color: #A2A2A2;
+}
