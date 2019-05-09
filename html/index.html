@@ -7,187 +7,73 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="../css/public.css">
-    <style>
-        #banner {
-            overflow: hidden;
-        }
-
-        #banner ul {
-            width: 200%;
-        }
-
-        #banner ul li {
-            width: 50%;
-            float: left;
-        }
-
-        #banner ul li a img {
-            width: 100%;
-        }
-
-        #content {
-            background: #f2f2f2;
-        }
-
-        .container {
-            width: 1000px;
-            margin: 0 auto;
-        }
-
-        .tv {
-            height: 66px;
-            line-height: 66px;
-        }
-
-        .tv li a {
-            display: block;
-            margin-top: 14px;
-        }
-
-        .tv li strong {
-            font-size: 22px;
-            color: black;
-            padding: 0 8px;
-        }
-
-        .tv li strong b {
-            font-size: 22px;
-            color: red;
-        }
-
-        .zhibo {
-            width: 998px;
-            height: 316px;
-            background: #fff;
-            border: 1px solid #ddd;
-        }
-
-        .zhibo {
-            position: relative;
-            font-size: 16px;
-        }
-
-        .zhibo a {
-            width: 319px;
-            height: 264px;
-            display: block;
-            position: absolute;
-        }
-
-        .zhibo a:nth-child(1) {
-            left: 20px;
-            top: 20px;
-            border-right: 1px solid #efefef;
-        }
-
-        .zhibo a:nth-child(2) {
-            left: 338px;
-            top: 20px;
-            border-right: 1px solid #efefef;
-        }
-
-        .zhibo a:nth-child(3) {
-            left: 658px;
-            top: 20px;
-        }
-
-        .zhibo a img {
-            width: 300px;
-            padding: 0 9px 0 10px;
-            display: block;
-        }
-
-        .zhibo a p {
-            padding: 16px 0 0 22px;
-        }
-
-        .zhibo a p:nth-child(3) {
-            height: 20px;
-            float: left;
-        }
-
-        .zhibo a p em {
-            font-size: 20px;
-        }
-
-        .zhibo a p i {
-            font-size: 14px;
-            color: #ccc;
-            text-decoration: line-through;
-        }
-
-        .jr {
-            height: 74px;
-            line-height: 74px;
-            font-size: 22px;
-        }
-
-        .jr em {
-            color: red;
-            padding-left: 8px;
-        }
-
-        .biqiang {
-            height: 372px;
-        }
-
-        .biqiang .bi-right {
-            width: 743px;
-            height: 372px;
-            background: #fff;
-            border: 1px solid #ddd;
-        }
-        .biqiang .bi-right a {
-            width: 239px;
-            height: 340px;
-            display: block;
-            float: left;
-            margin-top: 15px;
-        }
-        .biqiang .bi-right a:nth-child(1){
-            padding-left: 25px;
-        }
-        .biqiang .bi-right a img {
-            width: 210px;
-            display: block;
-        }
-        .biqiang .bi-right a p {
-            width: 210px;
-        }
-        .biqiang .bi-right a p:nth-child(2) {
-            margin-top: 16px;
-            line-height: 20px;
-        }
-        .biqiang a p em {
-            font-size: 20px;
-            margin-top: 16px;
-        }
-
-        .biqiang a p i {
-            font-size: 14px;
-            color: #ccc;
-            text-decoration: line-through;
-        }
-        .biqiang .now{
-            background: red;
-            border-radius: 20px;
-            color: #fff; 
-            width: 67px;
-            height: 24px;
-            line-height: 24px;
-            text-align: center;
-            float: right;
-            margin-right: 15px
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <script src="../js/index_active.js"></script>
+    <script src="../js/animate6.0.js"></script>
+    <script src="../js/jquery.js"></script>
 </head>
 
 <body>
+    <!-- 菜单 -->
+    <div id="menu">
+        <div class="core clearfix">
+            <div id="notify" class="fl">
+                <a href="#"><img src="../images/notify.jpg" /></a>公告：
+                <p>紧急通知紧急通知</p>
+            </div>
+            <ul id="menu_list" class="fr">
+                <li><a href="./register.html">注册</a></li>
+                <li><a href="./login.html">登录</a></li>
+                <li><a href="#">我的订单</a></li>
+                <li><a href="#">我的关注</a></li>
+                <li><a href="#">资讯</a></li>
+                <li><a href="#">品牌库</a></li>
+                <li><a href="#"><img src="../images/phone.jpg" /><span>手机惠买</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- logo-搜索-二维码 -->
+    <div id="headbar">
+        <div class="core flx">
+            <div id="weblogo"><a href="#"><img src="../images/logo.jpg" /></a></div>
+
+            <div class="search">
+                <input type="text" placeholder="请输入商品名称或货号">
+                <button>搜索</button>
+            </div>
+            
+            <div id="qrcode">
+                <a href="#"><p class="fl">下载APP&nbsp;&nbsp;<br/>立即拼团享实惠</p><img src="../images/qr.jpg" /></a>
+            </div>
+        </div>
+    </div>
+    <!-- 商品导航 -->
+    <div id="nav">
+        <div class="core">
+            <ul class="nav nav-pills">
+                <li role="presentation"><a href="#">首页</a></li>
+                <li role="presentation"><a href="#">视频</a></li>
+                <li role="presentation"><a href="#">品质厨房</a></li>
+                <li role="presentation"><a href="#">美食民生</a></li>
+                <li role="presentation"><a href="#">健康生活</a></li>
+                <li role="presentation"><a href="#">魅力穿戴</a></li>
+                <li role="presentation"><a href="#">珠宝收藏</a></li>
+                <li role="presentation"><a href="#">美肤靓装</a></li>
+                <li role="presentation" id="classify"><a href="#"><img src="../images/sub_nav_lf.jpg" /><span>在线分类</span><img src="../images/sub_nav_rt.jpg" /></a></li>
+            </ul>
+        </div>
+    </div>
+
     <div id="banner">
-        <ul>
-            <li><a href="#"><img src="../images/banner1.jpg" alt="惠买"></a></li>
-            <li><a href="#"><img src="../images/banner2.jpg" alt="惠买"></a></li>
+        <ul class="bannerUl clearfix">
+            <li><a href="#" class="runbo"><img src="../images/banner1.jpg" alt="惠买"></a></li>
+            <!-- <li><a href="#"><img src="../images/banner2.jpg" alt="惠买"></a></li> -->
         </ul>
+        <div class="pnn">
+                <div class="prev pn">&lt;</div>
+                <div class="next pn">&gt;</div>
+                <div class="yuandian"><a href="#" class="yuan"></a><a href="#"></a></div>
+        </div>
     </div>
     <div id="content">
         <div class="container">
@@ -245,12 +131,174 @@
                     </a>
                 </div>
             </div>
+
+            
+            <!-- 瀑布流 -->
+            <h3 class="huixuanBar"><span>惠买优选</span></h3>
+            <div id="publiu">
+                <ul>
+                    <li>
+                    </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
         </div>
     </div>
-    <iframe src="./sidebar.html" frameborder="0" height="100%" style="position:fixed;top:0;right:0;"></iframe>
+    <iframe src="./footer.html" frameborder="0" width="100%" height="458px" scrolling="no"></iframe>
+    <iframe src="./sidebar.html" frameborder="0" height="60%" style="position:fixed;bottom:0;right:0;"></iframe>
 </body>
-<script src="../js/jquery.js"></script>
-<script>
-   
-</script>
+
 </html>
+
+<script>
+//banner轮播
+$(function(){
+    var timer = null;
+    var index = 0;
+    timer = setInterval(autoPlay,1000);
+    function autoPlay(){
+        if(index ==2){
+            index = 1;
+        }else{
+            index++;
+        }
+        $(".bannerUl .runbo img").attr("src","../images/banner"+index+".jpg");
+        $("#banner .pnn .yuandian a").eq(index-1).addClass("yuan").siblings().removeClass("yuan");
+    }
+    
+    $("#banner").on("mouseover",function(){
+        $(".pn").show();
+        clearInterval(timer);
+        // alert(111);
+    })
+    $("#banner").on("mouseout",function(){
+        $(".pn").hide();
+        timer = setInterval(autoPlay,1000);
+    })
+    $(".prev").on("click",function(){
+        if(index == 0 ){
+            index = 2;
+        }else if(index == 1) {
+            index = 2;
+        }else{
+            index--;
+        }
+        $(".bannerUl .runbo img").attr("src","../images/banner"+index+".jpg");
+        $("#banner .pnn .yuandian a").eq(index-1).addClass("yuan").siblings().removeClass("yuan");
+    })
+    $(".next").on("click",function(){
+        if(index == 0 ){
+            index = 2;
+        }else if(index == 2){
+            index = 1;
+        }else{
+            index++;
+        }
+        $(".bannerUl .runbo img").attr("src","../images/banner"+index+".jpg");
+        $("#banner .pnn .yuandian a").eq(index-1).addClass("yuan").siblings().removeClass("yuan");
+    })
+})
+
+
+
+
+var banUl = document.getElementsByClassName("bannerUl")[0];
+
+
+//瀑布流
+var ul = document.getElementById("publiu").firstElementChild;
+var list = ul.getElementsByTagName("li");
+
+//默认加载
+loadImg();
+function loadImg(){
+    $.getJSON("./hmyx.json",function(data){
+        for(var i=0; i < list.length; i++){
+            if(data[i]){
+                // console.log(data[i]);
+                //pic
+                var img = document.createElement("img");
+                img.src = data[i].src;
+                list[i].appendChild(img);
+
+                //info
+                list[i].appendChild( add_info(data[i]) );
+                
+            }else{
+                var p = document.createElement("p");
+                p.innerText = "no more to see";
+                list[i].appendChild(p);
+            }
+        }
+    });
+}
+
+document.onscroll = function (){
+    var ch = document.documentElement.clientHeight;
+    var sh = document.documentElement.scrollTop;
+    //获取窗口滚走距离scrolltop
+    //是否大于document.body.scrollHeight
+    if(sh + ch >= document.body.scrollHeight){
+        $.getJSON("./hmyx.json",function(data){
+            // console.log(list.length);
+            if(data.length <= list.length){
+                alert("no more goods");
+                return;
+            }else{
+                for(var i=list.length; i < data.length; i++){
+                    if(data[i]){
+                        var newli = document.createElement("li");
+                        var img = document.createElement("img");
+                        img.src = data[i].src;
+                        newli.appendChild(img);
+
+                        newli.appendChild( add_info(data[i]) );
+                        ul.appendChild(newli);
+
+                    }else{
+                        alert("no more goods");
+                        return;
+                    }
+                }
+            }
+            
+        });
+    }
+}
+
+
+function add_info(arr){
+    var div = document.createElement("div");
+    div.className = "info";
+    // list[i].appendChild(div);
+    var h4 = document.createElement("h4");
+    h4.innerHTML = arr.content;
+    // console.log(data[i].content);
+    div.appendChild(h4);
+
+    var sub_div = document.createElement("div");
+    sub_div.className = "sub_info";
+
+    var span1 = document.createElement("span");
+    span1.className = "price_tag";
+    // console.log(data[i].price);
+    span1.innerHTML = "￥" + arr.price;
+
+    sub_div.appendChild(span1);
+
+    var span2 = document.createElement("span");
+    span2.className = "numb";
+    var str = `<b>${arr.num}</b>人已购买`;
+    span2.innerHTML = str;
+
+    sub_div.appendChild(span2);
+    div.appendChild(sub_div);
+    // list[i].appendChild(div);
+
+    return div;
+}
+</script>

@@ -1,0 +1,343 @@
+.core{
+    width: 1000px;
+    margin: 0 auto;
+}
+#menu{
+    background-color: #f6f6f6;
+    font-size: 12px;
+    color: #666666;
+    border-bottom:1px solid #dddddd;
+}
+#notify a,#notify p,#menu_list li,#menu_list li img{
+    display: inline-block;
+}
+#notify{
+    padding:6px 0;
+}
+#menu_list{
+    margin-bottom: 0px;
+}
+#menu_list li{
+    margin:6px 0;
+    /* border-left: 1px solid #747474; */
+    border-right: 1px solid #aeaeae;
+}
+#menu_list:last-child span{
+    margin-left: 6px;
+}
+#menu_list li a{
+    padding:0 12px;
+}
+#headbar .core{
+    justify-content: space-between;
+    padding: 24px 0 14px 0;
+    align-items: center;
+}
+#headbar .search input{
+    border:2px solid #f70801;
+    width: 328px;
+    padding:10px;
+}
+#headbar .search button{
+    border:none;
+    padding:10.5px 22px;
+    background: #f70801;
+    color:#fffffd;
+}
+#qrcode{
+    font-weight: bold;
+}
+#qrcode a{
+    position: relative;
+}
+#qrcode a p{
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 4px;
+}
+#nav{
+    background: #f70800;
+}
+#nav li a{
+    color: #feedec;
+    border-radius: 0px;
+    font-size: 14px;
+}
+#nav li{
+    display: inline-block;
+    padding: 14px 20px;
+}
+.nav{
+    position: relative;
+}
+#nav li:last-child{
+    position: absolute;
+    right: 0;
+}
+#nav li:hover{
+    background: #bc0600 !important;
+}
+#nav #classify a img{
+    display: inline;
+}
+#nav #classify a span{
+    padding:0 3px;
+}
+
+#banner{
+    position: relative;
+}
+#banner,#banner ul {
+    height: 340px;
+    overflow: hidden;
+}
+#banner,#banner ul,#banner ul li {
+    width: 100%;
+}
+#banner ul li {
+    float: left;
+}
+#banner ul li a img {
+    width: 100%;
+    height: 340px;
+}
+#banner .pnn{
+    width: 1000px;
+    height: 340px;
+    position: relative;
+    top: -340px;
+    margin: 0 auto;
+} 
+#banner .pn{
+    width: 30px;
+    height: 60px;
+    background: #ccc;
+    border-radius: 5px;
+    position: absolute;
+    text-align: center;
+    line-height: 60px;
+    opacity: 0.5;
+    display: none;
+}
+#banner .prev{
+    top: 140px;
+    left: 0;
+}
+#banner .next{
+    top: 140px;
+    right: 0;
+}
+#banner .yuandian{
+position: absolute;
+bottom: 10px;
+left: 483px;
+}
+#banner .yuandian a{
+display: inline-block;
+width: 12px;
+height: 12px;
+background: #666666;
+border-radius: 50%;
+z-index: 10;
+margin: 5px;
+}
+#banner .yuandian .yuan{
+    background: orange;
+}
+#content {
+    background: #f2f2f2;
+}
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+.tv {
+    height: 66px;
+    line-height: 66px;
+}
+.tv li a {
+    display: block;
+    margin-top: 14px;
+}
+.tv li strong {
+    font-size: 22px;
+    color: black;
+    padding: 0 8px;
+}
+.tv li strong b {
+    font-size: 22px;
+    color: red;
+}
+.zhibo {
+    width: 998px;
+    height: 316px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+.zhibo {
+    position: relative;
+    font-size: 16px;
+}
+.zhibo a {
+    width: 319px;
+    height: 264px;
+    display: block;
+    position: absolute;
+}
+.zhibo a:nth-child(1) {
+    left: 20px;
+    top: 20px;
+    border-right: 1px solid #efefef;
+}
+.zhibo a:nth-child(2) {
+    left: 338px;
+    top: 20px;
+    border-right: 1px solid #efefef;
+}
+.zhibo a:nth-child(3) {
+    left: 658px;
+    top: 20px;
+}
+.zhibo a img {
+    width: 300px;
+    padding: 0 9px 0 10px;
+    display: block;
+}
+.zhibo a p {
+    padding: 16px 0 0 22px;
+}
+.zhibo a p:nth-child(3) {
+    height: 20px;
+    float: left;
+}
+.zhibo a p em {
+    font-size: 20px;
+}
+.zhibo a p i {
+    font-size: 14px;
+    color: #ccc;
+    text-decoration: line-through;
+}
+.jr {
+    height: 74px;
+    line-height: 74px;
+    font-size: 22px;
+}
+.jr em {
+    color: red;
+    padding-left: 8px;
+}
+.biqiang {
+    height: 372px;
+}
+.biqiang .bi-right {
+    width: 743px;
+    height: 372px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+.biqiang .bi-right a {
+    width: 239px;
+    height: 340px;
+    display: block;
+    float: left;
+    margin-top: 15px;
+}
+.biqiang .bi-right a:nth-child(1){
+    padding-left: 25px;
+}
+.biqiang .bi-right a img {
+    width: 210px;
+    display: block;
+}
+.biqiang .bi-right a p {
+    width: 210px;
+}
+.biqiang .bi-right a p:nth-child(2) {
+    margin-top: 16px;
+    line-height: 20px;
+}
+.biqiang a p em {
+    font-size: 20px;
+    margin-top: 16px;
+}
+.biqiang a p i {
+    font-size: 14px;
+    color: #ccc;
+    text-decoration: line-through;
+}
+.biqiang .now{
+    background: red;
+    border-radius: 20px;
+    color: #fff; 
+    width: 67px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    float: right;
+    margin-right: 15px
+}
+
+.huixuanBar{
+    margin-top: 4px;
+    font-size: 22px;
+    font-weight: bold;
+    background:url(../img/red.gif) left center no-repeat; 
+}
+.huixuanBar span{
+    padding-left: 12px;
+}
+#publiu{
+    padding-bottom: 30px; 
+}
+#publiu ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#publiu ul li{
+    width: 298px;
+    height: 440px;
+    margin-top:20px;
+    padding: 10px;
+    border: 1px solid #666666;
+}
+#publiu ul li:hover{
+    border:1px solid #f70800;
+}
+#publiu ul img{
+    width: 298px;
+    height: 298px;
+    display: block;
+}
+.info{
+    margin-top: 66px;
+}
+.info h4{
+    font-size:12px !important;
+    color:#f70800;
+    padding-left: 6px;
+}
+.sub_info{
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-between;
+}
+.sub_info .price_tag{
+    color:#222222;
+    font-size:22px;
+}
+.sub_info .numb{
+    color:#666666;
+    line-height: 32px;
+}
+.sub_info .numb b{
+    color: #f8241d;
+}
+
+
+/* <div class="info">
+    <h4>脉冲水流&nbsp;&nbsp;尽享洁净</h4>
+    <span class="price_tag">￥ 1799</span>
+    <span class="numb"><b>2</b>人已购买</span>
+</div> */
