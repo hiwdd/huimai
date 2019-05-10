@@ -1,21 +1,27 @@
 <?php 
+header("Content-type:text/html;charset=utf8");
 
-//1.接受post参数
+//连接数据库
+mysql_connect("10.36.133.193","mine","111111");
+//选择数据库
+mysql_query('use huimai_user');
+
+//获取参数并insert进数据库
+//接受post参数
 $username = $_POST['username'];
 $phone = $_POST['phone'];
 $pwd = $_POST['pwd'];
 
-//读写json文件保存数据
-$json_string = file_get_contents('./login.json');
-$aldata = json_decode( $json_string, true );//第二个参数保证将jSON字符串解码成数组
-//一个用来写入JSON文件的关系数组
-$arr = Array('username' => $username, 
-    'phone' => $phone,
-    'pwd' => $pwd);
-array_push( $aldata, $arr );
-// $aldata.push($arr);
+//插入数据
+$sql = "insert into user_info (username,phone,pwd) values ('$username','$phone','$pwd')";
+$res = mysql_query($sql);
 
-$data_new = json_encode( $aldata );//将PHP变量编码成JSON字符串
-file_put_contents( './login.json', $data_new );
+$row = mysql_affected_rows();
 
-echo 200;
+if($row > 0){
+    echo "succ";
+}else{
+    echo "fail";
+}
+
+?>

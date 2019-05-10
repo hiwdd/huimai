@@ -2,6 +2,8 @@
     header("Content-type:text/html;charset=utf8");
 
     $imgsrc = $_GET['imgsrc'];
+    $title = $_GET['title'];
+    $price = $_GET['price'];
 
 ?>
 
@@ -26,8 +28,7 @@
         #box {
             width: 352px;
             height: 352px;
-            border: 1px solid #000;
-            margin: 0 auto;
+            border: 1px solid #ccc;
             position: relative;
             
         }
@@ -35,7 +36,7 @@
         #big {
             width: 400px;
             height: 400px;
-            border: 1px solid #000;
+            border: 1px solid #ccc;
             overflow: hidden;
             position: absolute;
             top: 0;
@@ -65,8 +66,8 @@
             top: 0;
         }
 
-
-
+        #bbox,
+        #btn-t,
         .content,
         .main,
         .price,
@@ -154,6 +155,25 @@
             border: 1px solid #cccccc;
             margin-bottom: 30px;
         }
+
+        #btn-t .btn{
+            margin-right: 20px;
+            float: right;
+        }
+
+        .cont{
+            width:1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        #cont{
+            width:192px;
+            position: absolute;
+            right:20px;
+            bottom: 40px;
+            font-size: 22px;
+        }
+        
     </style>
 </head>
 
@@ -161,17 +181,31 @@
 
     <iframe src="./header.html" frameborder="0" width="100%" height="177px" scrolling="no"></iframe>
 
-    <div id="box">
-        <div id="small">
-            <!--小图区-->
-            <img src="<?php echo $imgsrc; ?>" alt="" width="350px" height="350px" />
-            <div id="mask"></div>
-            <!--遮罩层-->
+    <div id="bbox">
+        <div id="box">
+            <div id="small">
+                <!--小图区-->
+                <img src="<?php echo $imgsrc; ?>" alt="" width="350px" height="350px" />
+                <div id="mask"></div>
+                <!--遮罩层-->
+            </div>
+            <div id="big">
+                <!--大图区-->
+                <img src="<?php echo $imgsrc; ?>" alt="" id="bigImg" width="800px" height="800px" />
+            </div>
         </div>
-        <div id="big">
-            <!--大图区-->
-            <img src="<?php echo $imgsrc; ?>" alt="" id="bigImg" width="800px" height="800px" />
+    </div>
+
+    <div class="cont">
+        <div id="cont">
+            <p><?php echo $title; ?></p>
+            <p><?php echo $price; ?></p>
         </div>
+    </div>
+
+    <div id="btn-t">
+        <button class="btn btn-danger" id="btn1">查看购物车</button>
+        <button class="btn btn-danger" id="btn2">加入购物车</button>
     </div>
 
     <div class="content">
@@ -365,6 +399,8 @@
 
 </html>
 <script src="../js/public.js"> </script>
+<script src="../js/car.js"> </script>
+<script src="../js/jquery.js"></script>
 <script>
     var box = $id("box");
     var mask = $id("mask");
@@ -402,4 +438,23 @@
         $id("bigImg").style.left = -l * ($id("bigImg").offsetWidth / $id("small").offsetWidth) + "px";
         $id("bigImg").style.top = -t * ($id("bigImg").offsetHeight / $id("small").offsetHeight) + "px";
     }
+
+    //查看购物车
+    $id("btn1").onclick = function(){
+        location.href = "./car.html";
+    }
+
+    //加入购物车
+    var car = new Cart();
+    $id("btn2").onclick = function(){
+        //加入商品到购物车
+        var product = {
+            "imgsrc":$("#big>img").attr("src"),
+            "title":$("#cont>p").eq(0).html(),
+            "price":$("#cont>p").eq(1).html().split("￥")[1],
+            "number":1
+        }
+        car.addCar(product);
+    }
+
 </script>

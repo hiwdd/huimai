@@ -154,19 +154,22 @@
                     <img src="../images/pic1.jpg" alt="惠买">
                     <p>美国西屋营养萃取破壁机</p>
                     <p><em>￥599</em><i>￥699</i></p>
-                    <iframe src="./setinteval.html" frameborder="0" style="position:absolute;top:44px;left:50px;" width="200px" height="30px" scrolling="no"></iframe>
+                    <iframe src="./setinteval.html" frameborder="0" style="position:absolute;top:44px;left:50px;"
+                        width="200px" height="30px" scrolling="no"></iframe>
                 </a>
                 <a href="#">
                     <img src="../images/pic1.jpg" alt="惠买">
                     <p>美国西屋营养萃取破壁机</p>
                     <p><em>￥599</em><i>￥699</i></p>
-                    <iframe src="./setinteval.html" frameborder="0" style="position:absolute;top:44px;left:50px;" width="200px" height="30px" scrolling="no"></iframe>
+                    <iframe src="./setinteval.html" frameborder="0" style="position:absolute;top:44px;left:50px;"
+                        width="200px" height="30px" scrolling="no"></iframe>
                 </a>
                 <a href="#">
                     <img src="../images/pic1.jpg" alt="惠买">
                     <p>美国西屋营养萃取破壁机</p>
                     <p><em>￥599</em><i>￥699</i></p>
-                    <iframe src="./setinteval.html" frameborder="0" style="position:absolute;top:44px;left:50px;" width="200px" height="30px" scrolling="no"></iframe>
+                    <iframe src="./setinteval.html" frameborder="0" style="position:absolute;top:44px;left:50px;"
+                        width="200px" height="30px" scrolling="no"></iframe>
                 </a>
             </div>
             <h3 class="jr"><img src="../images/red.gif" alt="惠买"><em>今日</em>必抢</h3>
@@ -207,8 +210,7 @@
             <h3 class="huixuanBar"><span>惠买优选</span></h3>
             <div id="publiu">
                 <ul>
-                    <li>
-                    </li>
+                    <li></li>
                     <li></li>
                     <li></li>
                     <li></li>
@@ -226,21 +228,17 @@
 <script src="../js/ajax.js"></script>
 <script>
     //进入详情页
-    $(function(){
-        $(".zhibo").on("click","a",function(){
+    $(function () {
+        $(".zhibo,.biqiang>div").on("click", "a", function () {
             var imgsrc = $(this).find("img").attr("src");
-            console.log(imgsrc);
-            location.href = "./xq.php?imgsrc="+imgsrc;
+            var title = $(this).find("p").eq(0).text();
+            var price = $(this).find("p").eq(1).text();
+            // console.log(title,price);
+            location.href = "./xq.php?imgsrc="+imgsrc+"&title="+title+"&price="+price;
         })
-        $(".biqiang>div").on("click","a",function(){
+        $("#publiu>ul").on("click", "li", function () {
             var imgsrc = $(this).find("img").attr("src");
-            console.log(imgsrc);
-            location.href = "./xq.php?imgsrc="+imgsrc;
-        })
-        $("#publiu>ul").on("click","li",function(){
-            var imgsrc = $(this).find("img").attr("src");
-            console.log(imgsrc);
-            location.href = "./xq.php?imgsrc="+imgsrc;
+            location.href = "./xq.php?imgsrc="+imgsrc+"&title="+title+"&price="+price;
         })
     });
 
@@ -248,7 +246,7 @@
     $(function () {
         var timer = null;
         var index = 0;
-        timer = setInterval(autoPlay, 1000);
+        timer = setInterval(autoPlay, 2000);
 
         function autoPlay() {
             if (index == 2) {
@@ -261,13 +259,13 @@
         }
 
         $("#banner").on("mouseover", function () {
-            $(".pn").show();
+            $(".pn").fadeIn("slow");
             clearInterval(timer);
             // alert(111);
         })
         $("#banner").on("mouseout", function () {
-            $(".pn").hide();
-            timer = setInterval(autoPlay, 1000);
+            $(".pn").fadeOut("slow");
+            timer = setInterval(autoPlay, 2000);
         })
         $(".prev").on("click", function () {
             if (index == 0) {
