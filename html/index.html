@@ -135,7 +135,6 @@
     <div id="banner">
         <ul class="bannerUl clearfix">
             <li><a href="#" class="runbo"><img src="../images/banner1.jpg" alt="惠买"></a></li>
-            <!-- <li><a href="#"><img src="../images/banner2.jpg" alt="惠买"></a></li> -->
         </ul>
         <div class="pnn">
             <div class="prev pn">&lt;</div>
@@ -155,19 +154,19 @@
                     <img src="../images/pic1.jpg" alt="惠买">
                     <p>美国西屋营养萃取破壁机</p>
                     <p><em>￥599</em><i>￥699</i></p>
-                    <iframe src="./setinteval.html" frameborder="0" style="position:absolute;top:44px;left:30px;"></iframe>
+                    <iframe src="./setinteval.html" frameborder="0" style="position:absolute;top:44px;left:50px;" width="200px" height="30px" scrolling="no"></iframe>
                 </a>
                 <a href="#">
                     <img src="../images/pic1.jpg" alt="惠买">
                     <p>美国西屋营养萃取破壁机</p>
                     <p><em>￥599</em><i>￥699</i></p>
-                    <iframe src="./setinteval.html" frameborder="0" style="position:absolute;top:44px;left:30px;"></iframe>
+                    <iframe src="./setinteval.html" frameborder="0" style="position:absolute;top:44px;left:50px;" width="200px" height="30px" scrolling="no"></iframe>
                 </a>
                 <a href="#">
                     <img src="../images/pic1.jpg" alt="惠买">
                     <p>美国西屋营养萃取破壁机</p>
                     <p><em>￥599</em><i>￥699</i></p>
-                    <iframe src="./setinteval.html" frameborder="0" style="position:absolute;top:44px;left:30px;"></iframe>
+                    <iframe src="./setinteval.html" frameborder="0" style="position:absolute;top:44px;left:50px;" width="200px" height="30px" scrolling="no"></iframe>
                 </a>
             </div>
             <h3 class="jr"><img src="../images/red.gif" alt="惠买"><em>今日</em>必抢</h3>
@@ -224,8 +223,27 @@
 </body>
 
 </html>
-
+<script src="../js/ajax.js"></script>
 <script>
+    //进入详情页
+    $(function(){
+        $(".zhibo").on("click","a",function(){
+            var imgsrc = $(this).find("img").attr("src");
+            console.log(imgsrc);
+            location.href = "./xq.php?imgsrc="+imgsrc;
+        })
+        $(".biqiang>div").on("click","a",function(){
+            var imgsrc = $(this).find("img").attr("src");
+            console.log(imgsrc);
+            location.href = "./xq.php?imgsrc="+imgsrc;
+        })
+        $("#publiu>ul").on("click","li",function(){
+            var imgsrc = $(this).find("img").attr("src");
+            console.log(imgsrc);
+            location.href = "./xq.php?imgsrc="+imgsrc;
+        })
+    });
+
     //banner轮播
     $(function () {
         var timer = null;

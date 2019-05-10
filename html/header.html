@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>头部导航</title>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <script src="../js/index_active.js"></script>
+    <script src="../js/animate6.0.js"></script>
+    <script src="../js/jquery.js"></script>
+</head>
+<body>
+        <!-- 菜单 -->
+        <div id="menu">
+                <div class="core clearfix">
+                    <div id="notify" class="fl">
+                        <a href="#"><img src="../images/notify.jpg" /></a>公告：
+                        <p>紧急通知紧急通知</p>
+                    </div>
+                    <ul id="menu_list" class="fr">
+                        <li><a href="./register.html" target="_blank">注册</a></li>
+                        <li><a href="./login.html" target="_blank">登录</a></li>
+                        <li><a href="#">我的订单</a></li>
+                        <li><a href="#">我的关注</a></li>
+                        <li><a href="#">资讯</a></li>
+                        <li><a href="#">品牌库</a></li>
+                        <li><a href="#"><img src="../images/phone.jpg" /><span>手机惠买</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- logo-搜索-二维码 -->
+            <div id="headbar">
+                <div class="core flx">
+                    <div id="weblogo"><a href="#"><img src="../images/logo.jpg" /></a></div>
+        
+                    <div class="search">
+                        <input type="text" placeholder="请输入商品名称或货号">
+                        <button>搜索</button>
+                    </div>
+        
+                    <div id="qrcode">
+                        <a href="#">
+                            <p class="fl">下载APP&nbsp;&nbsp;<br />立即拼团享实惠</p><img src="../images/qr.jpg" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- 商品导航 -->
+            <div id="nav">
+                <div class="core">
+                    <ul class="nav nav-pills">
+                        <li role="presentation"><a href="#">首页</a></li>
+                        <li role="presentation"><a href="#">视频</a></li>
+                        <li role="presentation"><a href="#">品质厨房</a></li>
+                        <li role="presentation"><a href="#">美食民生</a></li>
+                        <li role="presentation"><a href="#">健康生活</a></li>
+                        <li role="presentation"><a href="#">魅力穿戴</a></li>
+                        <li role="presentation"><a href="#">珠宝收藏</a></li>
+                        <li role="presentation"><a href="#">美肤靓装</a></li>
+                        <li role="presentation" id="classify"><a href="#"><img
+                                    src="../images/sub_nav_lf.jpg" /><span>在线分类</span><img src="../images/sub_nav_rt.jpg" /></a>
+                        </li>
+                        <div id="wrap">
+        
+                            <div class="cook">
+                                <h3><img src="../images/c1.png" />品质厨房</h3>
+                                <a href="">烹制厨具</a><br>
+                                <a href="">厨房电器</a><br>
+                                <a href="">餐饮用具</a><br>
+                                <a href="">厨房配件</a>
+                            </div>
+        
+                            <div class="food">
+                                <h3><img src="../images/c2.png" />美食·民生</h3>
+                                <a href="">进口食品</a><br>
+                                <a href="">滋补养生</a><br>
+                                <a href="">休闲食品</a><br>
+                                <a href="">粮油干货</a><br>
+                                <a href="">酒水茶饮</a><br>
+                                <a href="">跨境直邮</a><br>
+                                <a href="">保健食品</a><br>
+                                <a href="">生鲜食品</a><br>
+                            </div>
+        
+                            <div class="life">
+                                <h3><img src="../images/c3.png" />健康生活</h3>
+                                <a href="">优质睡眠</a><br>
+                                <a href="">收纳用品</a><br>
+                                <a href="">生活日用</a><br>
+                                <a href="">生活小电</a><br>
+                                <a href="">装饰/家具</a><br>
+                                <a href="">健身/户外</a><br>
+                                <a href="">生活大电</a><br>
+                            </div>
+        
+                            <div class="clothes">
+                                <h3><img src="../images/c4.png" />魅力穿戴</h3>
+                                <a href="">女装</a><br>
+                                <a href="">男装</a><br>
+                                <a href="">内衣</a><br>
+                                <a href="">箱包</a><br>
+                                <a href="">鞋靴</a><br>
+                                <a href="">配饰</a><br>
+                                <a href="">户外鞋服</a><br>
+                            </div>
+        
+                            <div class="jewelry">
+                                <h3><img src="../images/c5.png" />珠宝收藏</h3>
+                                <a href="">翡翠玉石</a><br>
+                                <a href="">宝石珍珠</a><br>
+                                <a href="">水晶玛瑙</a><br>
+                                <a href="">时尚饰品</a><br>
+                                <a href="">钟表</a><br>
+                                <a href="">文化收藏</a><br>
+                            </div>
+        
+                            <div class="cosmetics" style="border-right: none;">
+                                <h3><img src="../images/c6.png" />美肤靓妆</h3>
+                                <a href="">面部护理</a><br>
+                                <a href="">洗护护理</a><br>
+                                <a href="">美容仪器</a><br>
+                                <a href="">身体护理</a><br>
+                                <a href="">彩妆香水</a><br>
+                            </div>
+        
+                        </div>
+                    </ul>
+                </div>
+            </div>
+</body>
+<script>
+//给在线分类添加二级菜单
+$(function () {
+        $("#nav #classify,#nav #wrap").mouseover(function () {
+            $("#wrap").show();
+        })
+        $("#nav #classify,#nav #wrap").mouseout(function () {
+            $("#wrap").hide();
+        })
+
+    })
+</script>
+</html>
