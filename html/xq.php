@@ -455,6 +455,7 @@
             "number":1
         }
         car.addCar(product);
+        alert("已成功加入，请点击查看购物车查看");
     }
 
 </script>

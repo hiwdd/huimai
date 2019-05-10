@@ -233,11 +233,13 @@
             var imgsrc = $(this).find("img").attr("src");
             var title = $(this).find("p").eq(0).text();
             var price = $(this).find("p").eq(1).text();
-            // console.log(title,price);
+            price = price.slice(0,4);
             location.href = "./xq.php?imgsrc="+imgsrc+"&title="+title+"&price="+price;
         })
         $("#publiu>ul").on("click", "li", function () {
             var imgsrc = $(this).find("img").attr("src");
+            var title = $(this).find(".info>h4").text();
+            var price = $(this).find(".sub_info>.price_tag").text();
             location.href = "./xq.php?imgsrc="+imgsrc+"&title="+title+"&price="+price;
         })
     });

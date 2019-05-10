@@ -11,10 +11,10 @@ Cart.prototype.getCar = function(){
 Cart.prototype.addCar = function(product){
   //1.判断是否有相同商品
   var cartlist = JSON.parse( localStorage.getItem('cartlist') ) || [];
-  if(this.hasGoods(product.id)){
+  if(this.hasGoods(product.imgsrc)){
     //1-1,有：商品数量加1
     for(var i=0; i<cartlist.length; i++){
-      if(cartlist[i].id == product.id){
+      if(cartlist[i].imgsrc == product.imgsrc){
         cartlist[i].number += product.number;
       }
     }
@@ -30,11 +30,11 @@ Cart.prototype.addCar = function(product){
 }
 
 //判断是否有相同商品
-Cart.prototype.hasGoods = function(id){
+Cart.prototype.hasGoods = function(imgsrc){
   var cartlist = JSON.parse( localStorage.getItem('cartlist') ) || [];
   for(var i=0; i<cartlist.length; i++){
-    //判断id是否相同
-    if(cartlist[i].id == id){
+    //判断imgsrc是否相同
+    if(cartlist[i].imgsrc == imgsrc){
       return true;
     }
   }
